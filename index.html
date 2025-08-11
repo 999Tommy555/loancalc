@@ -95,7 +95,7 @@
     </div>
   </form>
   <div id="result" style="margin-top: 20px;">
-    <h1>貸款金額: 總利息支出: 總金額:</h1>
+    
 
   </div>
   <table id="resultTable">
@@ -150,15 +150,14 @@
         //每月應還(本金+利息),剩餘貸款
         tempHtml += "<tr>";
         if (i == months - 1) {
-          tempHtml += `<td>${i + 1}</td><td>${month_pay}</td><td>${interest}</td>
-          <td>${month_pay + interest + principal}</td><td>${0}</td>`;
+          tempHtml += `<td>${i + 1}</td><td>${month_pay}</td><td>${interest}</td><td>${month_pay + interest + principal}</td><td>${0}</td>`;
         } else {
-          tempHtml += `<td>${i + 1}</td><td>${month_pay}</td><td>${interest}</td>
-          <td>${month_pay + interest}</td><td>${principal}</td>`;
+          tempHtml += `<td>${i + 1}</td><td>${month_pay}</td><td>${interest}</td><td>${month_pay + interest}</td><td>${principal}</td>`;
         }
         tempHtml += "</tr>";
-
+        
       }
+      resultE1.innerHTML = `<h1>貸款金額:${principal} 總利息支出:${month_pay * months - principal} 總金額:${principal*((((1+month_rate)*months)*month_rate)/(((1+month_rate)*months)-1))*months}</h1>`;
       resultTableE1.innerHTML = tempHtml;
 
 
