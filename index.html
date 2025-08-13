@@ -111,7 +111,7 @@
     <br>
     <div class="buttons">
       <button type="button" id="calc">計算利息</button>
-      <button type="button" onclick="reset()">重置輸入</button>
+      <button type="button" onclick="reset_input()">重置輸入</button>
     </div>
   </form>
   <div id="result" style="margin-top: 20px;">
@@ -147,9 +147,9 @@
     console.log(principalE1, rateE1, timeE1, resultTableE1);
 
     function reset_input() {
-      principalE1.innerHTML = "";
-      rateE1.innerHTML = "";
-      timeE1.innerHTML = "";
+      principalE1.value = "";
+      rateE1.value = "";
+      timeE1.value = "";
       resultE1.innerHTML = "";
       resultTableE1.innerHTML = "";
     }
